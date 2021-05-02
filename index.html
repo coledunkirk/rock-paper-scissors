@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+    const computerOptions = ["rock", "paper", "scissors"];
+    
+    function game() {
+      let computerScore = 0;
+      let playerScore = 0;
+      let tie = 0;
+      do {
+        let playerChoice = prompt("Rock, Paper, or Scissors?");
+        
+        function computerPlay() {
+          let computerRandom = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+          return computerRandom;
+        }
+        function playGame(playerChoice, computerChoice) {
+          if (playerChoice.toLowerCase() === computerChoice) {
+            tie++;
+            return `It's a tie! You both chose ${playerChoice.toLowerCase()}.`;
+          }
+          else if (playerChoice.toLowerCase() === "rock" && computerChoice === "paper") {
+            computerScore++;
+            return `You lose! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1).toLowerCase()} beats ${playerChoice.toLowerCase()}.`;
+          }
+          else if (playerChoice.toLowerCase() === "paper" && computerChoice === "scissors") {
+            computerScore++;
+            return `You lose! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1).toLowerCase()} beats ${playerChoice.toLowerCase()}.`;
+          }
+          else if (playerChoice.toLowerCase() === "scissors" && computerChoice === "rock") {
+            computerScore++;
+            return `You lose! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1).toLowerCase()} beats ${playerChoice.toLowerCase()}.`;
+          }
+          else if (playerChoice.toLowerCase() === "rock" && computerChoice === "scissors") {
+            playerScore++;
+            return `You win! ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase()} beats ${computerChoice.toLowerCase()}.`;
+          }
+          else if (playerChoice.toLowerCase() === "paper" && computerChoice === "rock") {
+            playerScore++;
+            return `You win! ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase()} beats ${computerChoice.toLowerCase()}.`;
+          }
+          else if (playerChoice.toLowerCase() === "scissors" && computerChoice === "paper") {
+            playerScore++;
+            return `You win! ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase()} beats ${computerChoice.toLowerCase()}.`;
+          }          
+          else {
+            return `That's not an option! Enter Rock, Paper, or Scissors!`;
+          }
+        } 
+        console.log(playGame(playerChoice, computerPlay()));
+      }
+      while ((tie + playerScore + computerScore) < 5);
+      if (playerScore > computerScore) {
+        console.log(`You won the game! The score was ${playerScore} - ${computerScore}.`);
+      }
+      else if (playerScore < computerScore) {
+        console.log(`You lost the game! The score was ${computerScore} - ${playerScore}.`);
+      }
+      else {
+        console.log(`The game was a tie! The score was ${computerScore} - ${playerScore}.`);
+      }
+    }
+    game();
+    </script>
+</body>
+</html>
