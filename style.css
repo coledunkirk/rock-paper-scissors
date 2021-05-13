@@ -1,0 +1,57 @@
+html {
+  background: url('./design-background.jpeg');
+  background-size: cover;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  padding: 70px;
+  font-size: 80px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.button {
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+  height: 40px;
+  width: 160px;
+  font-size: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  text-align: center;
+  cursor: pointer;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  font-size: 35px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  padding: 70px;
+  font-size: 60px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
